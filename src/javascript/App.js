@@ -17,12 +17,6 @@ function App() {
     },
   ];
 
-  if ('undefined' !== typeof window.localStorage.cars) {
-    cars = window.localStorage.cars;
-  }
-
-  console.log(cars);
-
   const carlist = cars.map((car) => {
     return <Car
       key={ car.id }
@@ -31,8 +25,6 @@ function App() {
       image={ car.image }
     />
   });
-
-  console.log(carlist);
 
   return (
     <div className="container">
