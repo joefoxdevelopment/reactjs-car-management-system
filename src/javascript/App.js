@@ -1,29 +1,47 @@
-import logo from '../assets/logo.svg';
-import '../stylesheets/App.css';
 import Car from './Car';
+import { v4 as uuid } from 'uuid';
 
 function App() {
+  let cars = [
+    {
+      id: uuid(),
+      name: 'Ford',
+      description: 'Capri',
+      image: 'url'
+    },
+    {
+      id: uuid(),
+      name: 'Citroen',
+      description: 'C4',
+      image: 'url'
+    },
+  ];
+
+  if ('undefined' !== typeof window.localStorage.cars) {
+    cars = window.localStorage.cars;
+  }
+
+  console.log(cars);
+
+  const carlist = cars.map((car) => {
+    return <Car
+      key={ car.id }
+      name={ car.name }
+      description={ car.description }
+      image={ car.image }
+    />
+  });
+
+  console.log(carlist);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1>Car management</h1>
+      <div>
+        { carlist }
+      </div>
     </div>
   );
 }
-
-let car = new Car('Ford', 'Thingy');
-console.log(car.id);
 
 export default App;

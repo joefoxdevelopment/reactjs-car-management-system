@@ -6,4 +6,8 @@ Local car management system in a React application
     - `npx create-react-app .`
     - `node -v >> .nvmrc`
     - `npm install uuid`
+    - `npm install react-bootstrap bootstrap`
 - Update elements
+
+## Disagreements with requirements
+- Each car should be represented by a class rather than an object
