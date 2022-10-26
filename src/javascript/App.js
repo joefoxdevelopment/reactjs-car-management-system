@@ -1,5 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from '../assets/logo.svg';
+import '../stylesheets/App.css';
+import Car from './Car';
 
 function App() {
   return (
@@ -21,5 +22,8 @@ function App() {
     </div>
   );
 }
+
+let car = new Car('Ford', 'Thingy');
+console.log(car.id);
 
 export default App;

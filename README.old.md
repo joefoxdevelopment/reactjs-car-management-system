@@ -6,3 +6,4 @@ Local car management system in a React application
     - `npx create-react-app .`
     - `node -v >> .nvmrc`
     - `npm install uuid`
+- Update elements
