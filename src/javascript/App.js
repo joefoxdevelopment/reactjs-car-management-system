@@ -1,25 +1,14 @@
 import Car from './Car';
-import { v4 as uuid } from 'uuid';
+import CarApiClient from './CarApiClient';
 
 function App() {
-  let cars = [
-    {
-      id: uuid(),
-      name: 'Ford',
-      description: 'Capri',
-      image: 'url'
-    },
-    {
-      id: uuid(),
-      name: 'Citroen',
-      description: 'C4',
-      image: 'url'
-    },
-  ];
+  const carApiClient = new CarApiClient();
+  const cars = carApiClient.getCars();
 
   const carlist = cars.map((car) => {
     return <Car
       key={ car.id }
+      id={ car.id }
       name={ car.name }
       description={ car.description }
       image={ car.image }
