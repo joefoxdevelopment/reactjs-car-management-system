@@ -33,6 +33,15 @@ class CarApiClient {
             }
         });
     }
+
+    deleteCar(carId) {
+        document.cars.forEach((storedCar, index) => {
+            if (storedCar.id === carId) {
+                document.cars.splice(index, 1);
+                return;
+            }
+        });
+    }
 }
 
 export default CarApiClient;
